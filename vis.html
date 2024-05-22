@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adenovirus Visualization</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+<body>
+    <h1>GC Content Distribution</h1>
+    <div id="gc-content"></div>
+
+    <h1>Sequence Length Distribution</h1>
+    <div id="seq-length"></div>
+
+    <script>
+        // Load data
+        d3.json("data.json").then(data => {
+            // GC Content Distribution
+            const gcContentData = data.map(d => d.gc_content);
+            const svg = d3.select("#gc-content").append("svg").attr("width", 500).attr("height", 300);
+            const x = d3.scaleLinear().domain([0, 100]).range([0, 500]);
+            const histogram = d3.histogram().domain(x.domain()).thresholds(x.ticks(20));
+            const bins = histogram(gcContentData);
+            const y = d3.scaleLinear().domain([0, d3.max(bins, d => d.length)]).range([300, 0]);
+
+            svg.append("g")
+                .selectAll("rect")
+                .data(bins)
+                .enter()
+                .append("rect")
+                .attr("x", d => x(d.x0))
+                .attr("y", d => y(d.length))
+                .attr("width", d => x(d.x1) - x(d.x0) - 1)
+                .attr("height", d => 300 - y(d.length))
+                .style("fill", "steelblue");
+
+            // Sequence Length Distribution
+            const seqLengthData = data.map(d => d.length);
+            const svg2 = d3.select("#seq-length").append("svg").attr("width", 500).attr("height", 300);
+            const x2 = d3.scaleLinear().domain([0, d3.max(seqLengthData)]).range([0, 500]);
+            const histogram2 = d3.histogram().domain(x2.domain()).thresholds(x2.ticks(20));
+            const bins2 = histogram2(seqLengthData);
+            const y2 = d3.scaleLinear().domain([0, d3.max(bins2, d => d.length)]).range([300, 0]);
+
+            svg2.append("g")
+                .selectAll("rect")
+                .data(bins2)
+                .enter()
+                .append("rect")
+                .attr("x", d => x2(d.x0))
+                .attr("y", d => y2(d.length))
+                .attr("width", d => x2(d.x1) - x2(d.x0) - 1)
+                .attr("height", d => 300 - y2(d.length))
+                .style("fill", "steelblue");
+        });
+    </script>
+</body>
+</html>

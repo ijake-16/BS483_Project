@@ -1,0 +1,39 @@
+Left primer 0: GGAAGAGAACTCCAACGCGG
+Right primer 0: CTCAGCGCGCTTCTCCTC
+Product size: 112
+Left primer Tm: 61.01 °C
+Right primer Tm: 60.58 °C
+Left primer GC%: 60.00 %
+Right primer GC%: 66.67 %
+
+Left primer 1: CGGAAGAGAACTCCAACGCG
+Right primer 1: CTCAGCGCGCTTCTCCTC
+Product size: 113
+Left primer Tm: 61.34 °C
+Right primer Tm: 60.58 °C
+Left primer GC%: 60.00 %
+Right primer GC%: 66.67 %
+
+Left primer 2: CGCGGAAGAGAACTCCAACG
+Right primer 2: CTCAGCGCGCTTCTCCTC
+Product size: 115
+Left primer Tm: 61.34 °C
+Right primer Tm: 60.58 °C
+Left primer GC%: 60.00 %
+Right primer GC%: 66.67 %
+
+Left primer 3: GCGCGGAAGAGAACTCCAA
+Right primer 3: CTCAGCGCGCTTCTCCTC
+Product size: 116
+Left primer Tm: 60.37 °C
+Right primer Tm: 60.58 °C
+Left primer GC%: 57.89 %
+Right primer GC%: 66.67 %
+
+Left primer 4: GAAGAGAACTCCAACGCGGC
+Right primer 4: CTCAGCGCGCTTCTCCTC
+Product size: 111
+Left primer Tm: 61.63 °C
+Right primer Tm: 60.58 °C
+Left primer GC%: 60.00 %
+Right primer GC%: 66.67 %
